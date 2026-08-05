@@ -1,30 +1,33 @@
 const puppeteer = require("puppeteer");
+const path = require("path");
 
-async function generate(){
+async function generate() {
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  });
 
-const browser = await puppeteer.launch();
+  const page = await browser.newPage();
 
-const page = await browser.newPage();
+  const filePath = "file://" + path.join(__dirname, "index.html");
 
+  await page.goto(filePath, {
+    waitUntil: "networkidle0"
+  });
 
-await page.goto(
-"http://localhost:5500/index.html",
-{
-waitUntil:"networkidle0"
+  await page.pdf({
+    path: "Rethabile_Liphalane_CV.pdf",
+    format: "A4",
+    printBackground: true,
+    preferCSSPageSize: true
+  });
+
+  await browser.close();
+
+  console.log("✅ PDF created successfully!");
 }
-);
 
-
-await page.pdf({
-path:"Rethabile_Liphalane_CV.pdf",
-format:"A4",
-printBackground:true
-});
-
-
-await browser.close();
-
-}
-
-
-generate();
+generate().catch(console.error);
