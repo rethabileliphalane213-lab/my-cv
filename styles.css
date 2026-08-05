@@ -131,3 +131,34 @@ footer {
 
 }
 
+
+
+
+.print-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+@media print {
+
+.print-btn {
+    display:none;
+}
+
+body {
+    background:white;
+}
+
+.cv-container {
+    margin:0;
+    width:100%;
+}
+
+}
