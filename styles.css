@@ -1,0 +1,133 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+.cv-container {
+    width: 850px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+}
+
+
+/* HEADER */
+
+header {
+    text-align: center;
+    border-bottom: 3px solid #222;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
+/* SECTIONS */
+
+section {
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #222;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* SUMMARY */
+
+.summary {
+    text-align: justify;
+}
+
+
+/* EXPERIENCE */
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    font-size: 18px;
+}
+
+.date {
+    font-style: italic;
+    color: #666;
+}
+
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+
+/* SKILLS */
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+.skill-box {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+
+/* PROJECTS */
+
+.project {
+    margin-bottom: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 30px;
+    text-align:center;
+    font-size:12px;
+}
+
+
+@media(max-width:900px){
+
+.cv-container{
+    width:95%;
+    padding:25px;
+}
+
+.skills{
+    grid-template-columns:1fr;
+}
+
+}
+
